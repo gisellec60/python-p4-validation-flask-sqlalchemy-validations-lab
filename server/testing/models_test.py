@@ -92,7 +92,7 @@ class TestPost:
 
         with app.app_context():
             content_string = "This is content" * 150
-            summary_string = "T" * 250
+            summary_string = "T" * 251
             with pytest.raises(ValueError):
                 post = Post(title='Secret, Why I love programming.', content=content_string, summary= summary_string, category='Non-Fiction')
                 db.session.add(post)
